@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA DE REPUESTOS </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr.highlight {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de PUESTOS</h1>
+    <input type="text" id="searchInput" placeholder="Escribe un nombre..." oninput="searchPerson()">
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>CODIGOS</th>
+                <th>REPUESTOS</th>
+                <th>MODELOS</th>
+                <th>CANTIDA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>DD-10181</td><td>FARO DELANTERO*L</td><td>CHANCHE M50S</td><td>2</td></tr>
+            <tr><td>DD-10182</td><td>FARO DELANTERO*R</td><td>CHANCHE M50S</td><td>2</td></tr>
+            <tr><td>DD-ONS-1</td><td>FARO DELANTERO-L</td><td>CHANCHE HONORS</td><td>2</td></tr>
+            <tr><td>DD-ONS-2</td><td>FARO DELANTERO*R</td><td>HONORS</td><td>2</td></tr>
+            <tr><td>RXD-CS35-2</td><td>FARO DELANTERO DE CAPOT*R</td><td>CHANCHE CS35PLUS 21</td><td>2</td></tr>
+            <tr><td>DD-DFFXF500-1</td><td>FARO DELANTERO*L</td><td>GLORY F500/M3</td><td>2</td></tr>
+            <tr><td>DD-DFFXF500-2</td><td>FARO DELANTERO*R</td><td>GLORY F500/M3</td><td>2</td></tr>
+            <tr><td>DD-DFFXF500-3</td><td>FARO POSTERIOR*INTERIOR*L</td><td>GLORY F500/M3</td><td>2</td></tr>
+            <tr><td>DD-DFFXF500-4</td><td>FARO POSTERIOR*INTERIOR*R</td><td>GLORY F500/M3</td><td>2</td></tr>
+            <tr><td>HD-JB.-49-3</td><td>FARO POSTERIOR*R</td><td>CHANGAN KUAYUE STAR V5</td><td>2</td></tr>
+            <tr><td>HD-JB.-49-4</td><td>FARO POSTERIOR*L</td><td>CHANGAN KUAYUE STAR V5</td><td>2</td></tr>
+            <tr><td>YZB-JB.-60</td><td>GUARDAFANGO*L</td><td>CHANGAN KY V5/V1</td><td>2</td></tr>
+            <tr><td>YZB-JB.-61</td><td>GUARDAFANGO*R</td><td>CHANGAN KY V5/V1</td><td>2</td></tr>
+            <tr><td>YZB-JB-1</td><td>GUARDAFANGO</td><td>CHANA KY10/V5</td><td>2</td></tr>
+            <tr><td>YZB-JB-10</td><td>GUARDAFANGO</td><td>CHANA KY10/V5</td><td>2</td></tr>
+            <tr><td>YZBNC-CS15-1</td><td>PROTECTOR GUARDAFANGO /L</td><td>CHANGAN CS15</td><td>2</td></tr>
+            <tr><td>YZBNC-CS15-2</td><td>PROTECTOR GUARDAFANGO /R</td><td>CHANAGAN CS15</td><td>2</td></tr>
+            <tr><td>YZBNC-ONS-1</td><td>PROTECTOR GUARDAFANGO /L</td><td>HONOR S</td><td>2</td></tr>
+            <tr><td>YZBNC-ONS-2</td><td>PROTECTOR GUARDAFANGO /R</td><td>HONOR S</td><td>2</td></tr>
+            <tr><td>JG-CS15-1</td><td>CAPOTA</td><td>CHANGAN CS15</td><td>1</td></tr>
+            <tr><td>JG-DFFXF500-1</td><td>CAPOTA</td><td>GLORY F500/M3</td><td>1</td></tr>
+            <tr><td>KQG-CX70-1</td><td>FILTRO DE AIRE</td><td>CHANGAN CS35/CS55</td><td>5</td></tr>
+            <tr><td>FXJ-CS15-2</td><td>CREMALLERA DE DIRECCION</td><td>CS15.MODELO 2019</td><td>1</td></tr>
+            <tr><td>QM-CS35-5</td><td>PUERTA DELANTERA*L</td><td>CHANGAN CS35 PLUS</td><td>1</td></tr>
+            <tr><td>QM-CS35-6</td><td>PUERTA DELANTERA*R</td><td>CHANGAN CS35 PLUS</td><td>1</td></tr>
+            <tr><td>QM-DFFXF500-1</td><td>PUERTA DELANTERA*L</td><td>GLORY F500/M4</td><td>1</td></tr>
+            <tr><td>QM-DFFXF500-2</td><td>PUERTA DELANTERA*R</td><td>GLORY F500/M4</td><td>1</td></tr>
+            <tr><td>QM-DFYF-1</td><td>PUERTA DELANTERA*L</td><td>ND</td><td>1</td></tr>
+            <tr><td>QM-DFYF-2</td><td>PUERTA DELANTERA*R</td><td>ND</td><td>1</td></tr>
+            <tr><td>ZM-CS55-1</td><td>PUERTA MEDIO*L</td><td>CHANGAN CS35 PLUS</td><td>1</td></tr>
+            <tr><td>ZM-CS55-2</td><td>PUERTA MEDIO*R</td><td>CHANGAN CS35 PLUS</td><td>1</td></tr>
+            <tr><td>ZM-FG-101</td><td>PUERTA MEDIO*L</td><td>GLORY 580</td><td>1</td></tr>
+            <tr><td>HM-FG-3</td><td>PUERTA POSTERIOR</td><td>GLORY S560</td><td>1</td></tr>
+        </tbody>
+    </table>
+
+    <script>
+    function searchPerson() {
+        const input = document.getElementById('searchInput').value.toLowerCase(); // Obtener el valor de búsqueda
+        const rows = document.querySelectorAll('#dataTable tbody tr'); // Seleccionar todas las filas de la tabla
+
+        rows.forEach(row => {
+            const puesto1 = row.cells[0].textContent.toLowerCase(); // Texto de la primera columna
+            const puesto2 = row.cells[1].textContent.toLowerCase(); // Texto de la segunda columna
+            const puesto3 = row.cells[2].textContent.toLowerCase(); // Texto de la tercera columna
+            const puesto4 = row.cells[3].textContent.toLowerCase(); // Texto de la cuarta columna
+
+            // Verificar si alguna de las celdas contiene el término de búsqueda
+            if (puesto1.includes(input) || puesto2.includes(input) || puesto3.includes(input) || puesto4.includes(input)) {
+                row.style.display = ''; // Mostrar la fila si coincide
+            } else {
+                row.style.display = 'none'; // Ocultar la fila si no coincide
+            }
+        });
+    }
+</script>
+</body>
+</html>
